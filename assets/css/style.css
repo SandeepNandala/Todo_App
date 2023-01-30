@@ -1,0 +1,163 @@
+*,*::before,*::after
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: #757f9a;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-entry
+{
+    background-color: darkgray;
+}
+
+textarea
+{
+    /* text-decoration: none; */
+    border:none;
+    padding: 5px;
+    /* font-weight: 800; */
+    /* border: .3px solid gray; */
+}
+
+input
+{
+    height: 20px;
+    width: 200px;
+    padding: 2px;
+}
+
+select{
+    height: 30px;
+    width:300px;
+    padding: 2px;
+}
+
+.desc
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* border:1px solid gray; */
+    margin-left: 10vw;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    
+}
+
+.todoCatDue{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* border:1px solid gray; */
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#cat_due{
+    display: flex;
+    margin-left: 10vw;
+    width: 80vw;
+    justify-content: space-evenly;
+}
+
+button
+{
+    align-items: center;
+    font-size: 25px;
+    margin-left: 45vw;
+    margin-top: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    
+}
+ i
+ {
+    margin-right: 5px;
+ }
+
+label{
+    font-size: 30px;
+}
+
+
+
+li{
+    list-style: none;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mark-task:checked+.todo-details h2
+{
+   text-decoration: line-through;
+}
+
+.desc-date
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40vw;
+}
+
+.desc-date .todo-details
+{
+    margin-left: -5vw;
+    
+}
+
+.desc-date .todo-details
+{
+  font-size: 16px;
+}
+
+#cat-button
+{
+    font-size: 20px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: green;
+    color: white;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+#delete-button
+{
+    font-size: 30px;
+    text-decoration: none;
+    color: red;
+    /* margin-top: 5px; */
+}
+
+.cat-delete
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+

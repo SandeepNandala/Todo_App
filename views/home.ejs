@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title%>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/b6c4e8d691.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>
+        <%= title%>
+    </h1>
+    <form id="form-container" action="/create-todo" method="post">
+        <hr>
+        <div class="desc">
+            <label for="description">Description</label>
+            <textarea class="input-entry" name="description" id="" cols="30" rows="2"
+                placeholder="What do you need to do?(Max 5 words)" required></textarea>
+        </div>
+        <hr>
+        <div id="cat_due">
+            <div class="todoCatDue">
+                <label for="category">Category</label>
+                <select class="input-entry" name="category" id="">
+                    <option value="" disabled selected hidden>choose your category</option>
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="office">Office</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="todoCatDue">
+                <label for="dueDate">Due Date</label>
+                <input class="input-entry" type="date" name="dueDate" placeholder="dd/mm/yyyy" required>
+            </div>
+
+        </div>
+        <hr>
+        <button type="submit" name="addTask"><i class="fa-solid fa-plus"></i>Add Task</button>
+    </form>
+
+
+    <div class="Todo-container">
+        <ul>
+            <% for(let i of todo_list){ %>
+                <li>
+                    <div class="desc-date">
+                        <input class="mark-task" type="checkbox" name="<%= i._id%>" id="">
+                        <div class="todo-details">
+                            <h2>
+                                <%= i.description%>
+                            </h2>
+                            <p><i class="fa-solid fa-calendar-days"></i>
+                                <%= i.dueDate%>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cat-delete">
+                        <input id="cat-button" type="button" value="<%= i.category%>">
+                        <a id="delete-button" href="/delete-todo/?id=<%= i._id%>">
+                            <i class="fa-sharp fa-solid fa-trash"></i>
+                        </a>
+                    </div>
+                </li>
+                <%}%>
+        </ul>
+    </div>
+</body>
+
+</html>
